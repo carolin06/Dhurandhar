@@ -1,0 +1,401 @@
+query,disaster,action,urgency,label
+flood alert,1,0,1,1
+how to deal with earthquake,1,1,0,1
+earthquake evacuation steps,1,1,0,1
+flood evacuation route,1,1,1,1
+latest movie,0,0,0,0
+how earthquakes occur,1,0,0,0
+how to prepare for earthquake,1,1,0,0
+earthquake evacuation steps,1,1,0,1
+news headlines,0,0,0,0
+latest movie,0,0,0,0
+cyclone evacuation plan,1,1,1,1
+latest movie,0,0,0,0
+flood evacuation route,1,1,1,1
+how earthquakes occur,1,0,0,0
+latest movie,0,0,0,0
+what is earthquake,1,0,0,0
+cyclone evacuation plan,1,1,1,1
+movie reviews,0,0,0,0
+earthquake meaning,1,0,0,0
+movie reviews,0,0,0,0
+latest movie,0,0,0,0
+how to deal with earthquake,1,1,0,1
+flood evacuation route,1,1,1,1
+earthquake alert,1,0,1,1
+tsunami evacuation steps,1,1,1,1
+what is earthquake,1,0,0,0
+earthquake meaning,1,0,0,0
+earthquake evacuation steps,1,1,0,1
+earthquake meaning,1,0,0,0
+cyclone evacuation plan,1,1,1,1
+tsunami evacuation steps,1,1,1,1
+latest movie,0,0,0,0
+flood evacuation route,1,1,1,1
+how to prepare for earthquake,1,1,0,0
+cyclone evacuation plan,1,1,1,1
+news headlines,0,0,0,0
+earthquake evacuation steps,1,1,0,1
+earthquake near me,1,0,1,1
+what is earthquake,1,0,0,0
+earthquake meaning,1,0,0,0
+cyclone evacuation plan,1,1,1,1
+cricket score,0,0,0,0
+latest movie,0,0,0,0
+movie reviews,0,0,0,0
+flood alert,1,0,1,1
+movie reviews,0,0,0,0
+flood alert,1,0,1,1
+flood alert,1,0,1,1
+cricket score,0,0,0,0
+cricket score,0,0,0,0
+how to deal with earthquake,1,1,0,1
+earthquake safety tips,1,0,0,0
+weather today,0,0,0,0
+cricket score,0,0,0,0
+tsunami evacuation steps,1,1,1,1
+earthquake evacuation route,1,1,0,1
+cricket score,0,0,0,0
+earthquake near me,1,0,1,1
+movie reviews,0,0,0,0
+earthquake alert,1,0,1,1
+what is earthquake,1,0,0,0
+latest movie,0,0,0,0
+earthquake evacuation steps,1,1,0,1
+how to deal with earthquake,1,1,0,1
+how to prepare for earthquake,1,1,0,0
+earthquake evacuation steps,1,1,0,1
+latest movie,0,0,0,0
+movie reviews,0,0,0,0
+how to prepare for earthquake,1,1,0,0
+earthquake evacuation route,1,1,0,1
+earthquake safety tips,1,0,0,0
+earthquake safety tips,1,0,0,0
+how to prepare for earthquake,1,1,0,0
+cricket score,0,0,0,0
+what is earthquake,1,0,0,0
+earthquake safety tips,1,0,0,0
+how to prepare for earthquake,1,1,0,0
+movie reviews,0,0,0,0
+movie reviews,0,0,0,0
+earthquake safety tips,1,0,0,0
+news headlines,0,0,0,0
+how to prepare for earthquake,1,1,0,0
+how earthquakes occur,1,0,0,0
+news headlines,0,0,0,0
+tsunami evacuation steps,1,1,1,1
+tsunami evacuation steps,1,1,1,1
+latest movie,0,0,0,0
+earthquake evacuation steps,1,1,0,1
+how to deal with earthquake,1,1,0,1
+how to deal with earthquake,1,1,0,1
+what is earthquake,1,0,0,0
+fire evacuation route,1,1,1,1
+tsunami evacuation steps,1,1,1,1
+flood evacuation route,1,1,1,1
+tsunami evacuation steps,1,1,1,1
+earthquake alert,1,0,1,1
+news headlines,0,0,0,0
+earthquake evacuation steps,1,1,0,1
+movie reviews,0,0,0,0
+earthquake meaning,1,0,0,0
+fire evacuation route,1,1,1,1
+weather today,0,0,0,0
+latest movie,0,0,0,0
+latest movie,0,0,0,0
+latest movie,0,0,0,0
+movie reviews,0,0,0,0
+earthquake alert,1,0,1,1
+earthquake near me,1,0,1,1
+cricket score,0,0,0,0
+how earthquakes occur,1,0,0,0
+fire evacuation route,1,1,1,1
+earthquake alert,1,0,1,1
+earthquake near me,1,0,1,1
+tsunami evacuation steps,1,1,1,1
+earthquake alert,1,0,1,1
+latest movie,0,0,0,0
+earthquake meaning,1,0,0,0
+news headlines,0,0,0,0
+how to prepare for earthquake,1,1,0,0
+flood evacuation route,1,1,1,1
+cyclone evacuation plan,1,1,1,1
+fire evacuation route,1,1,1,1
+earthquake meaning,1,0,0,0
+how earthquakes occur,1,0,0,0
+tsunami evacuation steps,1,1,1,1
+flood alert,1,0,1,1
+news headlines,0,0,0,0
+cyclone evacuation plan,1,1,1,1
+earthquake meaning,1,0,0,0
+earthquake near me,1,0,1,1
+earthquake near me,1,0,1,1
+movie reviews,0,0,0,0
+fire evacuation route,1,1,1,1
+earthquake safety tips,1,0,0,0
+news headlines,0,0,0,0
+how to prepare for earthquake,1,1,0,0
+earthquake alert,1,0,1,1
+cyclone evacuation plan,1,1,1,1
+earthquake safety tips,1,0,0,0
+weather today,0,0,0,0
+news headlines,0,0,0,0
+latest movie,0,0,0,0
+how earthquakes occur,1,0,0,0
+news headlines,0,0,0,0
+latest movie,0,0,0,0
+how to deal with earthquake,1,1,0,1
+what is earthquake,1,0,0,0
+how earthquakes occur,1,0,0,0
+earthquake evacuation steps,1,1,0,1
+flood alert,1,0,1,1
+tsunami evacuation steps,1,1,1,1
+earthquake meaning,1,0,0,0
+news headlines,0,0,0,0
+how to deal with earthquake,1,1,0,1
+how to prepare for earthquake,1,1,0,0
+earthquake alert,1,0,1,1
+earthquake evacuation steps,1,1,0,1
+how earthquakes occur,1,0,0,0
+earthquake meaning,1,0,0,0
+how to prepare for earthquake,1,1,0,0
+flood evacuation route,1,1,1,1
+how to deal with earthquake,1,1,0,1
+latest movie,0,0,0,0
+how to prepare for earthquake,1,1,0,0
+flood evacuation route,1,1,1,1
+weather today,0,0,0,0
+fire evacuation route,1,1,1,1
+earthquake alert,1,0,1,1
+earthquake near me,1,0,1,1
+tsunami evacuation steps,1,1,1,1
+earthquake near me,1,0,1,1
+earthquake meaning,1,0,0,0
+tsunami evacuation steps,1,1,1,1
+earthquake alert,1,0,1,1
+weather today,0,0,0,0
+how earthquakes occur,1,0,0,0
+how to prepare for earthquake,1,1,0,0
+how to prepare for earthquake,1,1,0,0
+fire evacuation route,1,1,1,1
+news headlines,0,0,0,0
+earthquake near me,1,0,1,1
+tsunami evacuation steps,1,1,1,1
+earthquake evacuation route,1,1,0,1
+how earthquakes occur,1,0,0,0
+how to prepare for earthquake,1,1,0,0
+movie reviews,0,0,0,0
+movie reviews,0,0,0,0
+news headlines,0,0,0,0
+earthquake evacuation route,1,1,0,1
+what is earthquake,1,0,0,0
+how earthquakes occur,1,0,0,0
+how to deal with earthquake,1,1,0,1
+earthquake evacuation steps,1,1,0,1
+cyclone evacuation plan,1,1,1,1
+earthquake alert,1,0,1,1
+how earthquakes occur,1,0,0,0
+earthquake safety tips,1,0,0,0
+earthquake alert,1,0,1,1
+earthquake evacuation steps,1,1,0,1
+cricket score,0,0,0,0
+latest movie,0,0,0,0
+earthquake meaning,1,0,0,0
+movie reviews,0,0,0,0
+earthquake safety tips,1,0,0,0
+earthquake near me,1,0,1,1
+fire evacuation route,1,1,1,1
+tsunami evacuation steps,1,1,1,1
+how to deal with earthquake,1,1,0,1
+weather today,0,0,0,0
+earthquake alert,1,0,1,1
+latest movie,0,0,0,0
+how to deal with earthquake,1,1,0,1
+earthquake evacuation route,1,1,0,1
+what is earthquake,1,0,0,0
+cricket score,0,0,0,0
+tsunami evacuation steps,1,1,1,1
+earthquake meaning,1,0,0,0
+flood alert,1,0,1,1
+what is earthquake,1,0,0,0
+how earthquakes occur,1,0,0,0
+earthquake safety tips,1,0,0,0
+cricket score,0,0,0,0
+movie reviews,0,0,0,0
+how to prepare for earthquake,1,1,0,0
+earthquake safety tips,1,0,0,0
+fire evacuation route,1,1,1,1
+latest movie,0,0,0,0
+how to deal with earthquake,1,1,0,1
+earthquake evacuation route,1,1,0,1
+fire evacuation route,1,1,1,1
+earthquake meaning,1,0,0,0
+earthquake evacuation route,1,1,0,1
+tsunami evacuation steps,1,1,1,1
+movie reviews,0,0,0,0
+earthquake alert,1,0,1,1
+earthquake meaning,1,0,0,0
+how earthquakes occur,1,0,0,0
+how to prepare for earthquake,1,1,0,0
+cyclone evacuation plan,1,1,1,1
+flood alert,1,0,1,1
+what is earthquake,1,0,0,0
+earthquake meaning,1,0,0,0
+earthquake evacuation route,1,1,0,1
+earthquake safety tips,1,0,0,0
+news headlines,0,0,0,0
+earthquake evacuation route,1,1,0,1
+earthquake near me,1,0,1,1
+earthquake evacuation steps,1,1,0,1
+earthquake evacuation route,1,1,0,1
+earthquake safety tips,1,0,0,0
+latest movie,0,0,0,0
+how earthquakes occur,1,0,0,0
+earthquake near me,1,0,1,1
+movie reviews,0,0,0,0
+cyclone evacuation plan,1,1,1,1
+earthquake evacuation route,1,1,0,1
+tsunami evacuation steps,1,1,1,1
+earthquake near me,1,0,1,1
+earthquake evacuation route,1,1,0,1
+how to deal with earthquake,1,1,0,1
+fire evacuation route,1,1,1,1
+flood alert,1,0,1,1
+latest movie,0,0,0,0
+what is earthquake,1,0,0,0
+cyclone evacuation plan,1,1,1,1
+cyclone evacuation plan,1,1,1,1
+cricket score,0,0,0,0
+flood evacuation route,1,1,1,1
+cyclone evacuation plan,1,1,1,1
+news headlines,0,0,0,0
+how earthquakes occur,1,0,0,0
+flood alert,1,0,1,1
+movie reviews,0,0,0,0
+movie reviews,0,0,0,0
+weather today,0,0,0,0
+cyclone evacuation plan,1,1,1,1
+how earthquakes occur,1,0,0,0
+earthquake meaning,1,0,0,0
+tsunami evacuation steps,1,1,1,1
+earthquake alert,1,0,1,1
+news headlines,0,0,0,0
+flood alert,1,0,1,1
+how to prepare for earthquake,1,1,0,0
+cyclone evacuation plan,1,1,1,1
+earthquake near me,1,0,1,1
+how earthquakes occur,1,0,0,0
+news headlines,0,0,0,0
+cyclone evacuation plan,1,1,1,1
+fire evacuation route,1,1,1,1
+cricket score,0,0,0,0
+tsunami evacuation steps,1,1,1,1
+earthquake evacuation route,1,1,0,1
+fire evacuation route,1,1,1,1
+flood alert,1,0,1,1
+cyclone evacuation plan,1,1,1,1
+earthquake evacuation steps,1,1,0,1
+how earthquakes occur,1,0,0,0
+news headlines,0,0,0,0
+fire evacuation route,1,1,1,1
+earthquake meaning,1,0,0,0
+earthquake evacuation route,1,1,0,1
+earthquake meaning,1,0,0,0
+latest movie,0,0,0,0
+earthquake safety tips,1,0,0,0
+earthquake alert,1,0,1,1
+how earthquakes occur,1,0,0,0
+weather today,0,0,0,0
+what is earthquake,1,0,0,0
+how to deal with earthquake,1,1,0,1
+news headlines,0,0,0,0
+cyclone evacuation plan,1,1,1,1
+cricket score,0,0,0,0
+earthquake alert,1,0,1,1
+what is earthquake,1,0,0,0
+earthquake alert,1,0,1,1
+news headlines,0,0,0,0
+earthquake alert,1,0,1,1
+movie reviews,0,0,0,0
+earthquake evacuation steps,1,1,0,1
+cyclone evacuation plan,1,1,1,1
+earthquake meaning,1,0,0,0
+tsunami evacuation steps,1,1,1,1
+news headlines,0,0,0,0
+flood alert,1,0,1,1
+latest movie,0,0,0,0
+earthquake near me,1,0,1,1
+tsunami evacuation steps,1,1,1,1
+latest movie,0,0,0,0
+latest movie,0,0,0,0
+flood evacuation route,1,1,1,1
+cyclone evacuation plan,1,1,1,1
+cyclone evacuation plan,1,1,1,1
+earthquake meaning,1,0,0,0
+flood evacuation route,1,1,1,1
+how earthquakes occur,1,0,0,0
+what is earthquake,1,0,0,0
+what is earthquake,1,0,0,0
+earthquake alert,1,0,1,1
+how to deal with earthquake,1,1,0,1
+latest movie,0,0,0,0
+flood evacuation route,1,1,1,1
+earthquake evacuation steps,1,1,0,1
+earthquake evacuation steps,1,1,0,1
+flood evacuation route,1,1,1,1
+news headlines,0,0,0,0
+how earthquakes occur,1,0,0,0
+flood evacuation route,1,1,1,1
+tsunami evacuation steps,1,1,1,1
+how earthquakes occur,1,0,0,0
+fire evacuation route,1,1,1,1
+earthquake alert,1,0,1,1
+news headlines,0,0,0,0
+latest movie,0,0,0,0
+cricket score,0,0,0,0
+how earthquakes occur,1,0,0,0
+earthquake near me,1,0,1,1
+movie reviews,0,0,0,0
+earthquake safety tips,1,0,0,0
+what is earthquake,1,0,0,0
+earthquake evacuation route,1,1,0,1
+earthquake alert,1,0,1,1
+how to deal with earthquake,1,1,0,1
+flood evacuation route,1,1,1,1
+earthquake safety tips,1,0,0,0
+flood alert,1,0,1,1
+earthquake meaning,1,0,0,0
+what is earthquake,1,0,0,0
+what is earthquake,1,0,0,0
+earthquake evacuation steps,1,1,0,1
+earthquake evacuation route,1,1,0,1
+cyclone evacuation plan,1,1,1,1
+weather today,0,0,0,0
+news headlines,0,0,0,0
+flood alert,1,0,1,1
+movie reviews,0,0,0,0
+earthquake evacuation route,1,1,0,1
+movie reviews,0,0,0,0
+latest movie,0,0,0,0
+fire evacuation route,1,1,1,1
+movie reviews,0,0,0,0
+how to prepare for earthquake,1,1,0,0
+what is earthquake,1,0,0,0
+earthquake evacuation route,1,1,0,1
+news headlines,0,0,0,0
+how to deal with earthquake,1,1,0,1
+weather today,0,0,0,0
+movie reviews,0,0,0,0
+fire evacuation route,1,1,1,1
+cricket score,0,0,0,0
+fire evacuation route,1,1,1,1
+how to deal with earthquake,1,1,0,1
+latest movie,0,0,0,0
+what is earthquake,1,0,0,0
+news headlines,0,0,0,0
+how earthquakes occur,1,0,0,0
+cyclone evacuation plan,1,1,1,1
+earthquake evacuation steps,1,1,0,1
+flood evacuation route,1,1,1,1
+how to deal with earthquake,1,1,0,1
+earthquake alert,1,0,1,1
