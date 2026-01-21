@@ -1,152 +1,139 @@
 import streamlit as st
 import json
-import os
+import pickle
 from datetime import datetime, timezone
 import math
-import re
 
-# ==============================
+# =========================
 # CONFIG
-# ==============================
-DATA_DIR = "data"
-DOCUMENT_FILE = os.path.join(DATA_DIR, "documents_2000.json")
+# =========================
+DATA_FILE = "data/documents_2000.json"
+INTENT_MODEL_PATH = "models/intent_model.pkl"
+VERIFY_MODEL_PATH = "models/verification_model.pkl"
 
-EMERGENCY_WORDS = {
-    "earthquake", "flood", "cyclone", "tsunami",
-    "explosion", "fire", "landslide", "storm",
-    "evacuation", "alert", "emergency", "rescue"
-}
+# =========================
+# LOAD MODELS
+# =========================
+with open(INTENT_MODEL_PATH, "rb") as f:
+    intent_model = pickle.load(f)
 
-# ==============================
-# SAFE DOCUMENT LOADER
-# (Fixes blank page issues)
-# ==============================
+with open(VERIFY_MODEL_PATH, "rb") as f:
+    verify_model = pickle.load(f)
+
+# =========================
+# LOAD DOCUMENTS
+# =========================
 def load_documents():
-    try:
-        if not os.path.exists(DOCUMENT_FILE):
-            st.error(f"❌ File not found: {DOCUMENT_FILE}")
-            st.stop()
+    with open(DATA_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-        with open(DOCUMENT_FILE, "r", encoding="utf-8") as f:
-            docs = json.load(f)
+docs = load_documents()
 
-        if not isinstance(docs, list):
-            st.error("❌ Document file format is invalid")
-            st.stop()
+# =========================
+# FEATURE EXTRACTION
+# =========================
+def extract_intent_features(query):
+    q = query.lower()
 
-        return docs
+    disaster = int(any(w in q for w in [
+        "earthquake", "flood", "cyclone", "tsunami",
+        "fire", "explosion", "landslide", "disaster"
+    ]))
 
-    except Exception as e:
-        st.error("❌ Failed to load documents")
-        st.exception(e)
-        st.stop()
+    action = int(any(w in q for w in [
+        "evacuate", "rescue", "help", "alert",
+        "shelter", "warning", "emergency"
+    ]))
 
-# ==============================
-# UTILS
-# ==============================
-def tokenize(text):
-    return set(re.findall(r"\b[a-zA-Z]+\b", text.lower()))
+    urgency = int(any(w in q for w in [
+        "urgent", "now", "immediately", "today",
+        "asap", "danger"
+    ]))
 
-def is_emergency_query(query):
-    q_words = tokenize(query)
-    return any(w in EMERGENCY_WORDS for w in q_words)
+    return [[disaster, action, urgency]]
 
-# ==============================
-# FRESHNESS SCORE (SAFE)
-# ==============================
+
+def extract_verification_features(doc, urgency):
+    trust = float(doc.get("trust", 0.5))
+    gov_source = int(doc.get("source_type", "").lower() == "official")
+    panic = int(any(w in doc.get("text", "").lower()
+                    for w in ["panic", "fear", "chaos", "terror"]))
+
+    return [[trust, gov_source, panic, urgency]]
+
+# =========================
+# FRESHNESS SCORE
+# =========================
 def freshness_score(timestamp):
     try:
-        doc_time = datetime.fromisoformat(str(timestamp))
-
-        if doc_time.tzinfo is None:
-            doc_time = doc_time.replace(tzinfo=timezone.utc)
-
-        now = datetime.now(timezone.utc)
-        hours_old = (now - doc_time).total_seconds() / 3600
-
-        return 1 / (1 + hours_old)
-
+        doc_time = datetime.fromisoformat(timestamp)
     except:
-        return 0.5
+        return 1.0
 
-# ==============================
-# RELEVANCE SCORE
-# ==============================
-def relevance_score(query_words, doc_text):
-    doc_words = tokenize(doc_text)
-    if not doc_words:
-        return 0.0
-    return len(query_words & doc_words) / len(query_words)
+    if doc_time.tzinfo is None:
+        doc_time = doc_time.replace(tzinfo=timezone.utc)
 
-# ==============================
-# FINAL SCORING LOGIC
-# ==============================
-def score_document(doc, query_words, emergency):
+    now = datetime.now(timezone.utc)
+    hours_old = (now - doc_time).total_seconds() / 3600
+
+    return math.exp(-hours_old / 48)
+
+# =========================
+# FINAL RANKING
+# =========================
+def score_document(doc, emergency, urgency):
     trust = float(doc.get("trust", 0.5))
-    text = f"{doc.get('title','')} {doc.get('text','')}"
-    relevance = relevance_score(query_words, text)
-    fresh = freshness_score(doc.get("timestamp"))
+    freshness = freshness_score(doc.get("timestamp", ""))
 
     if emergency:
-        # EMERGENCY MODE → Trust + Freshness dominate
-        score = (
-            0.45 * trust +
-            0.35 * fresh +
-            0.20 * relevance
-        )
+        return 0.6 * trust + 0.4 * freshness
     else:
-        # NORMAL MODE → Relevance dominates
-        score = (
-            0.60 * relevance +
-            0.25 * trust +
-            0.15 * fresh
-        )
+        return trust
 
-    return score
-
-# ==============================
+# =========================
 # STREAMLIT UI
-# ==============================
-st.set_page_config(
-    page_title="Emergency-Aware Search Engine",
-    layout="wide"
-)
-
+# =========================
+st.set_page_config(page_title="Emergency-Aware Search Engine", layout="wide")
 st.title("🚨 Emergency-Aware Search Engine")
 
-# Load docs safely
-documents = load_documents()
-
-query = st.text_input("Search", placeholder="e.g. flood alert in prayagraj")
+query = st.text_input("Search", placeholder="Type your query and press Enter")
 
 if query:
-    query_words = tokenize(query)
-    emergency = is_emergency_query(query)
+    # ---------- INTENT MODEL ----------
+    X_intent = extract_intent_features(query)
+    emergency = int(intent_model.predict(X_intent)[0])
+    urgency = X_intent[0][2]
 
     if emergency:
-        st.error("🚨 Emergency Mode ON (Trusted + Latest)")
+        st.error("🚨 Emergency Mode ON (ML-Detected)")
     else:
-        st.success("✅ Normal Mode (Most Relevant)")
+        st.success("✅ Normal Mode")
 
     results = []
 
-    for doc in documents:
-        text = f"{doc.get('title','')} {doc.get('text','')}".lower()
-        if any(w in text for w in query_words):
-            doc["_score"] = score_document(doc, query_words, emergency)
+    for doc in docs:
+        text = (doc.get("title", "") + " " + doc.get("text", "")).lower()
+        if query.lower() in text:
+            # ---------- VERIFICATION MODEL ----------
+            X_verify = extract_verification_features(doc, urgency)
+            trust_prob = verify_model.predict_proba(X_verify)[0][1]
+
+            doc["trust"] = trust_prob
+            doc["_score"] = score_document(doc, emergency, urgency)
             results.append(doc)
 
-    results = sorted(results, key=lambda d: d["_score"], reverse=True)
+    results.sort(key=lambda x: x["_score"], reverse=True)
 
-    st.write(f"### Found {len(results)} result(s)")
+    st.write(f"Found {len(results)} result(s)")
 
     for i, d in enumerate(results[:10], start=1):
         st.markdown(f"### {i}. {d.get('title','(No title)')}")
-        st.write(d.get("text","")[:300] + "...")
+        st.write(d.get("text", "")[:250] + "...")
         st.caption(
-            f"Trust: {d.get('trust',0.5)} | "
+            f"Trust: {round(d['trust'],2)} | "
             f"Score: {round(d['_score'],3)} | "
             f"Time: {d.get('timestamp','')}"
         )
         st.divider()
+
 
