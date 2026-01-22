@@ -126,9 +126,11 @@ def score_document(doc, emergency):
 
     pogo_penalty = math.exp(-pogo / 5)
 
-    base = (0.6 * trust + 0.4 * freshness) if emergency else trust
-    return base * pogo_penalty
+    text = (doc["title"] + " " + doc["text"] + " " + doc.get("location", "")).lower()
+    relevance = sum(1 for w in query_words if w in text)
 
+    base = (0.2 * trust + 0.8 * freshness) if emergency else trust
+    return (base + 0.1 * relevance) * pogo_penalty
 
 
 # =========================
@@ -186,7 +188,8 @@ if query:
                 emergency=emergency
             )
             if emergency and freshness < 0.3:
-                continue
+                print(f"Skipping {doc['title']} | freshness: {freshness}")
+
 
             result = {
                 **doc,
