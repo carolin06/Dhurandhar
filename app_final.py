@@ -13,9 +13,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-DATA_FILE = BASE_DIR / "documents_2000_upgraded_st.json"
-INTENT_MODEL_PATH = BASE_DIR / "src" / "intent_model.pkl"
-VERIFY_MODEL_PATH = BASE_DIR / "src" / "verification_model.pkl"
+DATA_FILE = BASE_DIR / "data"/"documents_2000_upgraded_st.json"
+INTENT_MODEL_PATH = BASE_DIR / "models" / "intent_model.pkl"
+VERIFY_MODEL_PATH = BASE_DIR / "models" / "verification_model.pkl"
 
 # =========================
 # LOAD MODELS
@@ -419,4 +419,5 @@ elif mode == "Admin Panel":
                     st.rerun()
                 else:
                     st.warning("Fill all fields")
+
 
