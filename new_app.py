@@ -35,7 +35,7 @@ def load_documents():
 
 
 docs = load_documents()
-raw_docs = load_documents()
+
 
 def save_docs(docs):
     with open(DATA_FILE, "w", encoding="utf-8") as f:
@@ -130,7 +130,7 @@ def score_document(doc, emergency):
     text = (doc["title"] + " " + doc["text"] + " " + doc.get("location", "")).lower()
     relevance = sum(1 for w in query_words if w in text)
 
-    base = (0.2 * trust + 0.8 * freshness) if emergency else trust
+    base = (0.6 * trust + 0.4 * freshness) if emergency else trust
     return (base + 0.1 * relevance) * pogo_penalty
 
 
@@ -199,8 +199,7 @@ if query:
                 doc.get("timestamp", ""),
                 emergency=emergency
             )
-            if emergency and freshness < 0.3:
-                print(f"Skipping {doc['title']} | freshness: {freshness}")
+            
 
 
             result = {
@@ -280,6 +279,7 @@ if st.session_state.view_mode == "doc":
         st.session_state.current_doc_id = None
         st.session_state.view_mode = "results"
         st.rerun()
+
 
 
 
