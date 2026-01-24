@@ -13,7 +13,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
-DATA_FILE = BASE_DIR / "documents_2000_upgraded.json"
+DATA_FILE = BASE_DIR / "documents_2000_upgraded_st.json"
 INTENT_MODEL_PATH = BASE_DIR / "src" / "intent_model.pkl"
 VERIFY_MODEL_PATH = BASE_DIR / "src" / "verification_model.pkl"
 
@@ -280,6 +280,7 @@ if st.session_state.view_mode == "doc":
         st.session_state.current_doc_id = None
         st.session_state.view_mode = "results"
         st.rerun()
+
 
 
 
